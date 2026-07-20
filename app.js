@@ -11,7 +11,7 @@ document.querySelectorAll('.nav-btn').forEach(btn => {
     });
 });
 
-// Tampil/sembunyikan kolom
+// Tampil/sembunyikan kolom sesuai pilihan
 document.querySelectorAll('input[name="metode"]').forEach(radio => {
     radio.addEventListener('change', () => {
         const metode = document.querySelector('input[name="metode"]:checked').value;
@@ -20,36 +20,40 @@ document.querySelectorAll('input[name="metode"]').forEach(radio => {
     });
 });
 
-// FUNGSI PERBAIKAN TOMBOL
+// Fungsi tombol tambah akun
 document.querySelector('.btn-tambah').addEventListener('click', () => {
     const metode = document.querySelector('input[name="metode"]:checked').value;
     const statusEl = document.querySelector('.status');
+    const tokenInput = document.querySelector('#kolom-token input');
+    const cookiesInput = document.querySelector('#kolom-cookies textarea');
 
     if (metode === 'token') {
-        const token = document.querySelector('#kolom-token .input-data').value.trim();
+        const token = tokenInput.value.trim();
         if (!token) return tg.showAlert('❌ Kolom token tidak boleh kosong!');
-        if (!token.startsWith('eyJhbGci')) return tg.showAlert('❌ Format token salah! Pastikan dimulai eyJhbGci...');
-        localStorage.setItem('shopee_data', token);
+        if (!token.startsWith('eyJhbGci')) return tg.showAlert('❌ Format token salah! Harus dimulai eyJhbGci...');
+        
+        localStorage.setItem('shopee_akun', JSON.stringify({jenis: 'token', data: token}));
         statusEl.textContent = 'Aktif';
-        statusEl.classList.add('aktif');
+        statusEl.style.color = '#10b981';
         tg.showAlert('✅ Berhasil! Akun Token tersimpan.');
     }
 
     if (metode === 'cookies') {
-        const cookies = document.querySelector('#kolom-cookies .input-data').value.trim();
+        const cookies = cookiesInput.value.trim();
         if (!cookies) return tg.showAlert('❌ Kolom cookies tidak boleh kosong!');
-        localStorage.setItem('shopee_data', cookies);
+        
+        localStorage.setItem('shopee_akun', JSON.stringify({jenis: 'cookies', data: cookies}));
         statusEl.textContent = 'Aktif';
-        statusEl.classList.add('aktif');
+        statusEl.style.color = '#10b981';
         tg.showAlert('✅ Berhasil! Akun Cookies tersimpan.');
     }
 });
 
-// Muat status tersimpan
+// Muat status saat buka aplikasi
 window.addEventListener('load', () => {
-    if (localStorage.getItem('shopee_data')) {
+    const tersimpan = localStorage.getItem('shopee_akun');
+    if (tersimpan) {
         document.querySelector('.status').textContent = 'Aktif';
-        document.querySelector('.status').classList.add('aktif');
+        document.querySelector('.status').style.color = '#10b981';
     }
 });
-    
