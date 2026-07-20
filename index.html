@@ -1,59 +1,24 @@
-<!DOCTYPE html>
- <html lang="id">
- <head>
-     <meta charset="UTF-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <title>Radja786 Shopee</title>
-     <script src="https://telegram.org/js/telegram-web-app.js"></script>
-     <link rel="stylesheet" href="style.css">
- </head>
- <body>
-     <div class="profil">
-         <h2>Halo, Pengguna Radja786</h2>
-         <p>Status: <span class="status">Tidak Aktif</span></p>
-         <div class="ringkasan">
-             <h4>Checkout 14 Hari Terakhir</h4>
-             <p id="jumlah-pesanan">0 Pesanan</p>
-             <div class="grafik"></div>
+<div id="checkout" class="halaman">
+     <div class="kartu">
+         <h3>Proses Checkout Barang</h3>
+         <p class="petunjuk">Cukup tempel link produk Shopee di bawah ini (bisa link pendek atau panjang)</p>
+         <div class="kolom-input">
+             <input type="text" placeholder="Contoh: https://shopee.co.id/product/1234567890/..." class="input-data" id="link-produk">
          </div>
-     </div>
-     <div class="nav">
-         <button class="nav-btn aktif" data-halaman="dashboard">🏠 Dashboard</button>
-         <button class="nav-btn" data-halaman="checkout">🛒 Checkout</button>
-         <button class="nav-btn" data-halaman="pesanan">📦 Pesanan</button>
-     </div>
-     <div id="dashboard" class="halaman aktif"></div>
-     <div id="checkout" class="halaman">
-         <div class="kartu">
-             <h3>Tambah Akun Shopee</h3>
-             
-             <div class="pilihan-login">
-                 <label class="pilihan-item">
-                     <input type="radio" name="metode" value="token" checked>
-                     <span>🔑 Pakai Token Tipe 01</span>
-                 </label>
-                 <label class="pilihan-item">
-                     <input type="radio" name="metode" value="cookies">
-                     <span>🍪 Pakai Cookies Shopee</span>
-                 </label>
+         <div class="baris-dua">
+             <div class="kolom-input kecil">
+                 <label>Jumlah Beli</label>
+                 <input type="number" value="1" min="1" class="input-data" id="jumlah-beli">
              </div>
-             <div id="kolom-token" class="kolom-input">
-                 <input type="text" placeholder="Tempel token tipe 01 (mulai eyJhbGci...) di sini..." class="input-data" id="input-token">
+             <div class="kolom-input kecil">
+                 <label>ID Varian (jika ada)</label>
+                 <input type="text" placeholder="987654" class="input-data" id="id-varian">
              </div>
-             <div id="kolom-cookies" class="kolom-input" style="display: none;">
-                 <textarea placeholder="Tempel seluruh baris Cookies Shopee di sini..." class="input-data textarea" id="input-cookies" rows="4"></textarea>
-             </div>
-             <button class="btn-tambah" id="btn-simpan">+ Tambah Akun</button>
-             <p class="catatan">Gunakan cara resmi lewat aplikasi Shopee. Cookies berisiko cepat kadaluarsa!</p>
          </div>
-     </div>
-     <div id="pesanan" class="halaman">
-         <div class="kartu">
-             <h3>Riwayat Pesanan</h3>
-             <p class="kosong">Belum Ada Transaksi</p>
-             <p>Lakukan proses checkout terlebih dahulu</p>
+         <div class="kolom-input">
+             <input type="text" placeholder="Kode Voucher (opsional)" class="input-data" id="kode-voucher">
          </div>
+         <button class="btn-tambah" id="btn-proses">🚀 Mulai Proses Checkout</button>
+         <p class="catatan">Pastikan token/cookies sudah tersimpan dan saldo cukup di akun Shopee</p>
      </div>
-     <script src="app.js"></script>
- </body>
- </html>
+ </div>
