@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- DASHBOARD -->
+    <!-- HALAMAN DASHBOARD / LOGIN -->
     <div id="dashboard" class="halaman aktif">
         <div class="profil">
             <h2>Halo, Pengguna Radja786</h2>
@@ -19,9 +19,34 @@
                 <div class="grafik"></div>
             </div>
         </div>
+
+        <div class="kartu">
+            <h3>Tambah Akun Shopee</h3>
+            <div class="pilihan-login">
+                <label class="pilihan-item">
+                    <input type="radio" name="metode" value="token" checked>
+                    <span>🔑 Pakai Token Tipe 01</span>
+                </label>
+                <label class="pilihan-item">
+                    <input type="radio" name="metode" value="cookies">
+                    <span>🍪 Pakai Cookies Shopee</span>
+                </label>
+            </div>
+
+            <div id="kolom-token" class="kolom-input">
+                <input type="text" placeholder="Tempel token tipe 01 di sini..." class="input-data" id="input-token">
+            </div>
+
+            <div id="kolom-cookies" class="kolom-input" style="display: none;">
+                <textarea placeholder="Tempel seluruh baris Cookies di sini..." class="input-data textarea" id="input-cookies" rows="3"></textarea>
+            </div>
+
+            <button class="btn-tambah" id="btn-simpan">+ Simpan Akun</button>
+            <p class="catatan">Gunakan cara resmi lewat aplikasi Shopee</p>
+        </div>
     </div>
 
-    <!-- CHECKOUT -->
+    <!-- HALAMAN CHECKOUT -->
     <div id="checkout" class="halaman">
         <div class="kartu">
             <h3>Proses Checkout Barang</h3>
@@ -46,12 +71,11 @@
                 <input type="text" placeholder="Kode Voucher (Opsional)" class="input-data" id="kode-voucher">
             </div>
 
-            <button class="btn-tambah" id="btn-proses">🚀 Susun Perintah Checkout</button>
-            <p class="catatan">Pastikan Token/Cookies sudah tersimpan & saldo cukup</p>
+            <button class="btn-tambah" id="btn-proses">🚀 Susun Perintah</button>
         </div>
     </div>
 
-    <!-- PESANAN -->
+    <!-- HALAMAN PESANAN -->
     <div id="pesanan" class="halaman">
         <div class="kartu">
             <h3>Riwayat Pesanan</h3>
@@ -60,7 +84,7 @@
         </div>
     </div>
 
-    <!-- NAVIGASI BAWAH (TETAP ADA!) -->
+    <!-- NAVIGASI BAWAH (TIDAK AKAN HILANG LAGI!) -->
     <div class="nav">
         <button class="nav-btn aktif" data-halaman="dashboard">🏠 Dashboard</button>
         <button class="nav-btn" data-halaman="checkout">🛒 Checkout</button>
