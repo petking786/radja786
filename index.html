@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radja786 Shopee</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="profil">
+        <h2>Halo, Pengguna Radja786</h2>
+        <p>Status: <span class="status">Tidak Aktif</span></p>
+        <div class="ringkasan">
+            <h4>Checkout 14 Hari Terakhir</h4>
+            <p>0 Pesanan</p>
+            <div class="grafik"></div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <button class="nav-btn aktif" data-halaman="dashboard">🏠 Dashboard</button>
+        <button class="nav-btn" data-halaman="checkout">🛒 Checkout</button>
+        <button class="nav-btn" data-halaman="pesanan">📋 Pesanan</button>
+    </div>
+
+    <div id="dashboard" class="halaman aktif"></div>
+    <div id="checkout" class="halaman">
+        <div class="kartu">
+            <h3>Tambah Akun Shopee</h3>
+            <input type="text" placeholder="Tempel token tipe 01 di sini..." class="input-token">
+            <button class="btn-tambah">+ Tambah Akun</button>
+            <p class="catatan">Gunakan cara resmi lewat aplikasi Shopee</p>
+        </div>
+    </div>
+    <div id="pesanan" class="halaman">
+        <div class="kartu">
+            <h3>Riwayat Pesanan</h3>
+            <p class="kosong">Belum Ada Transaksi</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
