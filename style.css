@@ -3,15 +3,23 @@ body {background:#f8f9fa; padding:16px; padding-bottom:70px;}
 .profil {background:white; padding:20px; border-radius:12px; margin-bottom:16px; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
 .profil h2 {margin-bottom:4px; font-size:20px;}
 .status {color:#ef4444; font-weight:500;}
+.status.aktif {color:#10b981;}
 .ringkasan {margin-top:20px; padding-top:16px; border-top:1px solid #eee;}
-.grafik {height:40px; background:linear-gradient(to right, #e2e8f0 0%, #e2e8f0 100%); border-radius:4px; margin-top:8px;}
+.grafik {height:40px; background:#e2e8f0; border-radius:8px; margin-top:8px;}
 .nav {position:fixed; bottom:0; left:0; right:0; background:white; display:flex; justify-content:space-around; padding:12px 0; border-top:1px solid #eee;}
 .nav-btn {border:none; background:none; font-size:14px; color:#6b7280; cursor:pointer;}
 .nav-btn.aktif {color:#2563eb; font-weight:600;}
 .halaman {display:none; padding:16px 0;}
 .halaman.aktif {display:block;}
 .kartu {background:white; padding:20px; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.05);}
-.input-token {width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; margin:12px 0; font-size:15px;}
-.btn-tambah {width:100%; padding:12px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:500; font-size:15px;}
+.input-data {width:100%; padding:12px; border:1px solid #ddd; border-radius:8px; margin:12px 0; font-size:15px;}
+.btn-tambah {width:100%; padding:12px; background:#2563eb; color:white; border:none; border-radius:8px; font-weight:500; font-size:15px; cursor:pointer; transition:0.2s;}
+.btn-tambah:active {transform:scale(0.98);}
 .catatan {margin-top:12px; font-size:13px; color:#6b7280; text-align:center;}
 .kosong {font-size:16px; color:#374151; margin-bottom:8px; text-align:center;}
+
+.pilihan-login {margin:16px 0; padding:12px; background:#f8f9fa; border-radius:8px;}
+.pilihan-item {display:flex; align-items:center; gap:8px; padding:8px 0; cursor:pointer; font-size:15px;}
+.pilihan-item input {width:auto;}
+.kolom-input {margin-bottom:12px;}
+.input-data.textarea {resize:vertical; min-height:80px;}
