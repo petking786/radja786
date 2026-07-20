@@ -1,24 +1,72 @@
-<div id="checkout" class="halaman">
-     <div class="kartu">
-         <h3>Proses Checkout Barang</h3>
-         <p class="petunjuk">Cukup tempel link produk Shopee di bawah ini (bisa link pendek atau panjang)</p>
-         <div class="kolom-input">
-             <input type="text" placeholder="Contoh: https://shopee.co.id/product/1234567890/..." class="input-data" id="link-produk">
-         </div>
-         <div class="baris-dua">
-             <div class="kolom-input kecil">
-                 <label>Jumlah Beli</label>
-                 <input type="number" value="1" min="1" class="input-data" id="jumlah-beli">
-             </div>
-             <div class="kolom-input kecil">
-                 <label>ID Varian (jika ada)</label>
-                 <input type="text" placeholder="987654" class="input-data" id="id-varian">
-             </div>
-         </div>
-         <div class="kolom-input">
-             <input type="text" placeholder="Kode Voucher (opsional)" class="input-data" id="kode-voucher">
-         </div>
-         <button class="btn-tambah" id="btn-proses">🚀 Mulai Proses Checkout</button>
-         <p class="catatan">Pastikan token/cookies sudah tersimpan dan saldo cukup di akun Shopee</p>
-     </div>
- </div>
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radja786 Shopee</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- DASHBOARD -->
+    <div id="dashboard" class="halaman aktif">
+        <div class="profil">
+            <h2>Halo, Pengguna Radja786</h2>
+            <p>Status: <span class="status">Tidak Aktif</span></p>
+            <div class="ringkasan">
+                <h4>Checkout 14 Hari Terakhir</h4>
+                <p id="jumlah-pesanan">0 Pesanan</p>
+                <div class="grafik"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHECKOUT -->
+    <div id="checkout" class="halaman">
+        <div class="kartu">
+            <h3>Proses Checkout Barang</h3>
+            <p class="petunjuk">Cukup tempel link produk Shopee (pendek/panjang)</p>
+
+            <div class="kolom-input">
+                <input type="text" placeholder="Contoh: https://shopee.co.id/product/1234567890/..." class="input-data" id="link-produk">
+            </div>
+
+            <div class="baris-dua">
+                <div class="kolom-input kecil">
+                    <label>Jumlah Beli</label>
+                    <input type="number" value="1" min="1" class="input-data" id="jumlah-beli">
+                </div>
+                <div class="kolom-input kecil">
+                    <label>ID Varian</label>
+                    <input type="text" placeholder="Opsional" class="input-data" id="id-varian">
+                </div>
+            </div>
+
+            <div class="kolom-input">
+                <input type="text" placeholder="Kode Voucher (Opsional)" class="input-data" id="kode-voucher">
+            </div>
+
+            <button class="btn-tambah" id="btn-proses">🚀 Susun Perintah Checkout</button>
+            <p class="catatan">Pastikan Token/Cookies sudah tersimpan & saldo cukup</p>
+        </div>
+    </div>
+
+    <!-- PESANAN -->
+    <div id="pesanan" class="halaman">
+        <div class="kartu">
+            <h3>Riwayat Pesanan</h3>
+            <p class="kosong">Belum Ada Transaksi</p>
+            <p>Lakukan checkout terlebih dahulu</p>
+        </div>
+    </div>
+
+    <!-- NAVIGASI BAWAH (TETAP ADA!) -->
+    <div class="nav">
+        <button class="nav-btn aktif" data-halaman="dashboard">🏠 Dashboard</button>
+        <button class="nav-btn" data-halaman="checkout">🛒 Checkout</button>
+        <button class="nav-btn" data-halaman="pesanan">📦 Pesanan</button>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
